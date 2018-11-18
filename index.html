@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Symphony a Music Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Vision Debate - Imagine we have reached climate justice - how did we get there?</title>
 <!-- custom-theme -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,32 +39,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="agile_banner_info">
 				<h3>Vision</h3>
 				<div class="agile_banner_info_pos">
-					<h2>Debate</h2>
+					<h2>Imagine we have reached Climage Justice</h2>
 				</div>
+				<div><h2>How did we get there?</h2></div>
 			</div>
 		</div>
 	</div>
 <!-- //banner -->
 <!-- features -->
 	<div class="features">
-		<div class="container agile_features_right" id="posts">
-			<div class="row ">
-				<div class="col-md-2"><i class="fa fa-arrow-up">12</i> <i class="fa fa-arrow-down">3</i> <i class="fa fa-cloud-download"></i> </div>
-				<div class="col-md-4">Utopian perspectives from me</div>
-				<div class="col-md-6"> <audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="auto"></audio></div>
-			</div>
-			<div class="row">
-				<div class="col-md-2"><i class="fa fa-arrow-up">2</i> <i class="fa fa-arrow-down">0</i> <i class="fa fa-cloud-download"></i></div>
-				<div class="col-md-4">another world is possible</div>
-				<div class="col-md-6"> <audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="none"></audio></div>
-			</div>
-			<div class="row">
-				<div class="col-md-2"><i class="fa fa-arrow-up">0</i> <i class="fa fa-arrow-down">0</i> <i class="fa fa-cloud-download"></i></div>
-				<div class="col-md-4">here we go</div>
-				<div class="col-md-6"> <audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="none"></audio></div>
-			</div>
+
+		<div class="container agile_features_right" >
+			<div><h2>Popular</h2></div>
+			<div id="posts"></div>
 			<div class="clearfix"> </div>
 		</div>
+		<br><br>
+		<div class="container agile_features_right" >
+			<div><h2>Newest</h2></div>
+			<div id="newestposts"></div>
+			<div class="clearfix"> </div>
+		</div>
+
 	</div>
 <!-- //features -->
 <!-- newsletter -->
@@ -218,7 +214,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
- Parse.initialize("1fb956fd-8c8e-49ae-9029-de89ff271649", "kEyWpHYZtlfLao39mCQpxIZyhJ4kxPh9", "NMKe8hCMrSXquOcGn0MI500CcklCdpsm");
+ Parse.initialize("1fb956fd-8c8e-49ae-9029-de89ff271649", "kEyWpHYZtlfLao39mCQpxIZyhJ4kxPh9");
  Parse.serverURL = 'https://parse.buddy.com/parse'
  //Parse.Cloud.useMasterKey()
  var PostsClass = Parse.Object.extend("posts");
@@ -277,6 +273,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	function getPosts(){
 				m = []
 				var query = new Parse.Query(PostsClass);
+				query.ascending("up");
+				query.limit(5);
 				query.find().then(function(results) {
 					for (var i = 0; i < results.length; i++) {
 						var object = results[i];
@@ -284,6 +282,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  m += newPost(object.id,object.get('name'),object.get('up'), object.get('down'));
 					}
 					$("#posts").html( m );
+					//maudio({obj: 'audio'})
+					getNewestPosts();
+				});
+	}
+
+	function getNewestPosts(){
+				m = []
+				var query = new Parse.Query(PostsClass);
+				query.ascending("createdAt");
+				query.limit(2);
+				query.find().then(function(results) {
+					for (var i = 0; i < results.length; i++) {
+						var object = results[i];
+						//alert(object.id + ' - ' + object.get('playerName'));
+						m += newPost(object.id,object.get('name'),object.get('up'), object.get('down'));
+					}
+					$("#newestposts").html( m );
 					maudio({obj: 'audio'})
 				});
 	}
@@ -315,6 +330,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	}
 
 	getPosts();
+
+	//maudio({obj: 'audio'})
 
  </script>
 
