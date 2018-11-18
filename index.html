@@ -263,7 +263,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});*/
 	function newPost(id,name, up, down){
 		return "<div class=\"row\">"
-			+ "<div class=\"col-md-2\"><a href=# onclick=\"voteUp('"+id+"')\"><i class=\"fa fa-arrow-up\" id=up_"+id+">"+up+"</i></a> <a href=# onclick=\"voteDown('"+id+"')\"><i class=\"fa fa-arrow-down\" id=down_"+id+">"+down+"</i></a> <i class=\"fa fa-cloud-download\"></i> </div>"
+			+ "<div class=\"col-md-2\"><a href=# onclick=\"voteUp('"+id+"')\"><i class=\"fa fa-arrow-up\" id=up_"+id+">"+up+"</i></a>  <i class=\"fa fa-cloud-download\"></i> </div>"
 			+ "<div class=\"col-md-4\">"+name+"</div>"
 			+ "<div class=\"col-md-6\"> <audio src=\"http://kolber.github.io/audiojs/demos/mp3/juicy.mp3\" preload=\"auto\"></audio></div>"
 			+ "</div>"
@@ -273,7 +273,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	function getPosts(){
 				m = []
 				var query = new Parse.Query(PostsClass);
-				query.ascending("up");
+				query.descending("up");
 				query.limit(5);
 				query.find().then(function(results) {
 					for (var i = 0; i < results.length; i++) {
@@ -290,7 +290,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	function getNewestPosts(){
 				m = []
 				var query = new Parse.Query(PostsClass);
-				query.ascending("createdAt");
+				query.descending("createdAt");
 				query.limit(2);
 				query.find().then(function(results) {
 					for (var i = 0; i < results.length; i++) {
