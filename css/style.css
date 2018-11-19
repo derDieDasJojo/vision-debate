@@ -35,6 +35,7 @@ input[type="submit"],input[type="reset"],a{
 /*-- banner --*/
 .banner{
 	background:url(../images/banner.jpg) no-repeat 0px 0px;
+  background-attachment: fixed;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -252,14 +253,15 @@ nav.navbar.navbar-default {
 }
 .agile_banner_info_pos{
 	position: absolute;
-    top: 20%;
+    top: 5%;
     left: 21%;
 }
-.agile_banner_info_pos h2{
-	font-size: 2em;
-    color: #fffd00;
+.agile_banner_info_sub h2{
+	  font-size: 2em;
+    color: #333333;
     letter-spacing: 3px;
 }
+
 /*-- //banner --*/
 /*-- banner-bottom --*/
 .wthree_banner_bottom_grid{
@@ -2211,7 +2213,7 @@ ul.agileinfo_phone_mail{
 	.agile_banner_info h3 {
 		font-size: 12em;
 	}
-	.agile_banner_info_pos {
+	.agile_banner_info_sub {
 		left: 25%;
 	}
 	.w3layouts_banner_bottom_grid {
@@ -2222,7 +2224,7 @@ ul.agileinfo_phone_mail{
 	}
 }
 @media (max-width: 1280px){
-	.agile_banner_info_pos h2 {
+	.agile_banner_info_sub h2 {
 		font-size: 1.6em;
 	}
 	.hovereffect a i {
@@ -2270,8 +2272,8 @@ ul.agileinfo_phone_mail{
 		background: url(../images/2.png) no-repeat center;
 		background-size: 30%;
 	}
-	.agile_banner_info_pos {
-		top: 18%;
+	.agile_banner_info_sub {
+		top: 5%;
 	}
 	.banner {
 		min-height: 615px;
@@ -2449,10 +2451,10 @@ ul.agileinfo_phone_mail{
 		background: url(../images/2.png) no-repeat center;
 		background-size: 33%;
 	}
-	.agile_banner_info_pos h2 {
+	.agile_banner_info_sub h2 {
 		font-size: 1.3em;
 	}
-	.agile_banner_info_pos {
+	.agile_banner_info_sub {
 		left: 23.5%;
 	}
 	.agile_banner_info {
@@ -2745,7 +2747,7 @@ ul.agileinfo_phone_mail{
 	}
 }
 @media (max-width: 667px){
-	.agile_banner_info_pos {
+	.agile_banner_info_sub {
 		left: 19.5%;
 	}
 	.agile_banner_info {
@@ -2823,10 +2825,10 @@ ul.agileinfo_phone_mail{
 	.agile_banner_info h3 {
 		font-size: 7em;
 	}
-	.agile_banner_info_pos h2 {
+	.agile_banner_info_sub h2 {
 		font-size: 1.1em;
 	}
-	.agile_banner_info_pos {
+	.agile_banner_info_sub {
 		left: 22.5%;
 	}
 	.banner {
@@ -3104,12 +3106,12 @@ ul.agileinfo_phone_mail{
 		background: url(../images/2.png) no-repeat center;
 		background-size: 40%;
 	}
-	.agile_banner_info_pos h2 {
+	.agile_banner_info_sub h2 {
 		font-size: 1em;
 	}
-	.agile_banner_info_pos {
+	.agile_banner_info_sub {
 		left: 17.5%;
-		top: 11%;
+		top: 5%;
 	}
 	.wthree_banner_bottom_grid_pos {
 		width: 87%;
@@ -3246,9 +3248,9 @@ ul.agileinfo_phone_mail{
 	.banner {
 		min-height: 275px;
 	}
-	.agile_banner_info_pos {
+	.agile_banner_info_sub {
 		left: 6.5%;
-		top: 15%;
+		top: 6%;
 	}
 	.wthree_banner_bottom_grid_pos {
 		width: 83%;
